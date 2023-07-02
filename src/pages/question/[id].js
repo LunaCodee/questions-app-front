@@ -90,13 +90,12 @@ return (
             <div className={styles.answerText}>{answer.answer_text}</div>
             <div className={styles.voteContainer}>
               <div className={styles.voteSection}>
-                <div className={styles.likeCount}>{answer.gained_likes_number}</div>
+                {/* <div className={styles.likeCount}>{answer.gained_likes_number}</div> */}
                 <button onClick={() => handleLike(answer._id)} className={styles.voteButton}>
                   <img src={thumbUpImage.src} alt="Thumb Up" className={styles.thumbIcon} />
                 </button>
-              </div>
-              <div className={styles.voteSection}>
-                <div className={styles.dislikeCount}>{answer.gained_dislikes_number}</div>
+                <div className={styles.voteScore}>{answer.vote_score}</div>
+                {/* <div className={styles.dislikeCount}>{answer.gained_dislikes_number}</div> */}
                 <button onClick={() => handleDislike(answer._id)} className={styles.voteButton}>
                   <img src={thumbDownImage.src} alt="Thumb Down" className={styles.thumbIcon} />
                 </button>

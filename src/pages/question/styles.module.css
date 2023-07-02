@@ -42,17 +42,21 @@
   
 .voteSection {
   display: flex;
+  justify-content: space-around;
   align-items: center;
 }
+
+.voteScore {
+  margin: 0 10px;
+}
   
-.likeCount,
+/* .likeCount,
 .dislikeCount {
   margin-left: 5px;
   font-weight: bold;
-}
+} */
   
 .voteButton {
-  margin-left: 10px;
   background-color: transparent;
   border: none;
   cursor: pointer;
