@@ -9,10 +9,18 @@ const QuestionForm = () => {
   const router = useRouter();
   const [questionText, setQuestionText] = useState("");
   const [successMessage, setSuccessMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     
+    if (!questionText.trim()) {
+      setErrorMessage('* There is no answer text in the field');
+      setTimeout(() => {
+        setErrorMessage(null);
+      }, 1000);
+      return;
+    }
     try {
       const token = localStorage.getItem("jwt");
 
@@ -53,7 +61,8 @@ const QuestionForm = () => {
             placeholder="Type your question here"
             className={styles.textarea}
           ></textarea>
-                  {successMessage && <div className={styles.success_message}>{successMessage}</div>}
+           {errorMessage && <div className={styles.error_message}>{errorMessage}</div>}
+            {successMessage && <div className={styles.success_message}>{successMessage}</div>}
             <button type="submit" className={styles.button}>
               Ask
             </button>
