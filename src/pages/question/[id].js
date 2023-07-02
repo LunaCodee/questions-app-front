@@ -41,7 +41,7 @@ const QuestionPage = () => {
     event.preventDefault();
 
     if (newAnswer.trim() === '') {
-      setError('* There is no answer');
+      setError('* There is no answer text in the field');
       setTimeout(() => {
         setError('');
       }, 1000); 
