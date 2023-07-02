@@ -30,7 +30,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 1rem;
-  }
+}
   
 .form  input:hover {
     cursor: pointer;
@@ -54,7 +54,7 @@
 
 .errorMessage {
     color: rgb(245, 9, 9);
-  }
+}
 
 .successMessage {
     color: rgb(29, 207, 13);

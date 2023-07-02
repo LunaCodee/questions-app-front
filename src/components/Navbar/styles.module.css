@@ -60,7 +60,6 @@
     right:0px
 }
 
-
 .mobileMenu{
 display: flex;
 flex-direction: column;
@@ -80,7 +79,6 @@ list-style-type: none;
 }
 
 
-
 @media only screen and (max-width: 768px) {
     .menu{
         display: none;
@@ -89,7 +87,7 @@ list-style-type: none;
     .logo{
         height: 100px;
         width: 110px;
-       }
+    }
 
   }
 
