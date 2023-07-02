@@ -33,7 +33,7 @@ const LoginPage = () => {
   const handleSuccessfulLogin = (jwt, userId) => {
     localStorage.setItem("jwt", jwt);
     localStorage.setItem("userId", userId);
-    router.push("/");
+    router.push("/questions");
   };
 
   const handleSubmit = (event) => {

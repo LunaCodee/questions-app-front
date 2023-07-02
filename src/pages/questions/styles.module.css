@@ -3,8 +3,11 @@
     max-width: 90vw;
     margin: 0 auto;
     padding: 20px;
-    height: calc(100vh - 180px);
-  }
+    min-height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+}
   
 .title {
     display:flex;
@@ -35,7 +38,7 @@
 }
 
 .filterButtons button:hover {
-    background-color: rgb(222, 216, 216);
+    background-color: rgb(216, 241, 247);
   }
 
   

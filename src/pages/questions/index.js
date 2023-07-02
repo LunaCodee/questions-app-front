@@ -94,22 +94,37 @@ const QuestionsPage = () => {
     setFilteredQuestions(filteredQuestions);
   };
 
+  const handleQuestionDelete = async (questionId) => {
+    try {
+      await axios.delete(`http://localhost:8081/question/${questionId}`);
+      // Remove the deleted question from the state
+      const updatedQuestions = questions.filter(
+        (question) => question._id !== questionId
+      );
+      setQuestions(updatedQuestions);
+      setFilteredQuestions(updatedQuestions);
+    } catch (error) {
+      console.log("Error deleting question:", error);
+    }
+  };
+
   return (
     <>
       <Navbar />
       <div className={styles.container}>
+        <h1>Questions:</h1>
         <div className={styles.filterButtons}>
           <button
             className={filter === "answered" ? styles.active : ""}
             onClick={() => filterQuestions("answered")}
           >
-            Answered questions
+            Answered
           </button>
           <button
             className={filter === "unanswered" ? styles.active : ""}
             onClick={() => filterQuestions("unanswered")}
           >
-            Unanswered questions
+            Unanswered
           </button>
           <button
             className={filter === "all" ? styles.active : ""}
@@ -119,14 +134,19 @@ const QuestionsPage = () => {
           </button>
         </div>
         <div className={styles.questionList}>
-          {filteredQuestions.map((question) => (
-            <QuestionCard
-              key={question._id}
-              id={question._id}
-              question_text={question.question_text}
-              answers_ids={question.answers_ids || []}
-            />
-          ))}
+          {filteredQuestions.length === 0 ? (
+            <p>No questions at this moment</p>
+          ) : (
+            filteredQuestions.map((question) => (
+              <QuestionCard
+                key={question._id}
+                id={question._id}
+                question_text={question.question_text}
+                answers_ids={question.answers_ids || []}
+                onDelete={handleQuestionDelete}
+              />
+            ))
+          )}
         </div>
       </div>
       <Footer />

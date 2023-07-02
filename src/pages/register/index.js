@@ -34,8 +34,8 @@ const RegisterForm = () => {
     setSuccessMessage("Registration was successful!");
     setTimeout(() => {
       setSuccessMessage("");
-      router.push("/");
-    }, 5000);
+      router.push("/login");
+    }, 1000);
   };
 
   const validateEmail = () => {

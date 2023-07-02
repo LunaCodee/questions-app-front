@@ -8,8 +8,11 @@ import styles from "./styles.module.css";
 const QuestionForm = () => {
   const router = useRouter();
   const [questionText, setQuestionText] = useState("");
+  const [successMessage, setSuccessMessage] = useState(null);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
     try {
       const token = localStorage.getItem("jwt");
 
@@ -25,9 +28,13 @@ const QuestionForm = () => {
         }
       );
 
-      console.log("Question posted successfully:", response);
-
-      router.push("/questions");
+      console.log("Question was posted successfully!", response);
+      
+      setSuccessMessage("* Question was posted successfully!");
+      setTimeout(() => {
+        setSuccessMessage(null);
+        router.push("/questions");
+      }, 1000);
     } catch (err) {
       console.log("Error posting question:", err);
     }
@@ -38,6 +45,7 @@ const QuestionForm = () => {
       <Navbar />
       <div className={styles.container}>
         <h1 className={styles.title}>Ask Your Question:</h1>
+
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
             value={questionText}
@@ -45,6 +53,7 @@ const QuestionForm = () => {
             placeholder="Type your question here"
             className={styles.textarea}
           ></textarea>
+                  {successMessage && <div className={styles.success_message}>{successMessage}</div>}
           <div className={styles.button_wrapper}>
             <button type="submit" className={styles.button}>
               Submit
