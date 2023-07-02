@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import styles from "./styles.module.css";
 import { useRouter } from "next/router";
 import thumbUpImage from '../../assets/thumb-up.png';
-import thumbDownImage from '../../assets/thumb-down.png';
+import thumbDownImage from '../../assets/2thumb-down.png';
 
 const QuestionPage = () => {
   const router = useRouter();
