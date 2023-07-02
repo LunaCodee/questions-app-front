@@ -9,7 +9,7 @@ import thumbDownImage from '../../assets/thumb-down.png';
 
 const QuestionPage = () => {
   const router = useRouter();
-  const { id } = router.query; // get the question id from the route
+  const { id } = router.query; 
   const [question, setQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
   const [newAnswer, setNewAnswer] = useState('');
