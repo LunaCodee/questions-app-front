@@ -79,6 +79,16 @@ const QuestionPage = () => {
     }
   };
 
+  const handleDelete = async (answerId) => {
+    try {
+      await axios.delete(`http://localhost:8081/answer/${answerId}`);
+      const updatedAnswersResponse = await axios.get(`http://localhost:8081/question/${id}/answers`);
+      setAnswers(updatedAnswersResponse.data.response);
+    } catch (error) {
+      console.log('Error deleting answer:', error);
+    }
+  };
+
 return (
   <>
     <Navbar />
@@ -87,6 +97,9 @@ return (
       <ul className={styles.answerList}>
         {answers.map((answer) => (
           <li key={answer._id} className={styles.answerItem}>
+                          <button onClick={() => handleDelete(answer._id)} className={styles.deleteButton}>
+                X
+              </button>
             <div className={styles.answerText}>{answer.answer_text}</div>
             <div className={styles.voteContainer}>
               <div className={styles.voteSection}>
