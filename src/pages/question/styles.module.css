@@ -77,10 +77,15 @@
   border-radius: 5px;
   border: 1px solid #ddd;
 }
-  
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
 .submitButton {
   display: block;
-  min-width: 150px;
+  max-width: fit-content;
   height: 40px;
   margin-top: 10px;
   background-color: #276db7;
@@ -88,6 +93,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  align-self: center;
 }
   
 .submitButton:hover {

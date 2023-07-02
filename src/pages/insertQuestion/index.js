@@ -54,11 +54,9 @@ const QuestionForm = () => {
             className={styles.textarea}
           ></textarea>
                   {successMessage && <div className={styles.success_message}>{successMessage}</div>}
-          <div className={styles.button_wrapper}>
             <button type="submit" className={styles.button}>
-              Submit
+              Ask
             </button>
-          </div>
         </form>
       </div>
       <Footer />
