@@ -28,12 +28,15 @@ const DesktopMenu = () => {
         } `}
       >
         <ul className={styles.mobileMenu}>
-          <li>
-            <a href="/">All trips</a>
-          </li>
-          <li>
-            <a href="/insertTrip">Insert trip</a>
-          </li>
+        <li>
+          <a href="/">Log in</a>
+        </li>
+        <li>
+        <a href="/questions">All questions</a>
+        </li>
+        <li>
+        <a href="/insertQuestion">Ask NEW question</a>
+        </li>
         </ul>
       </div>
     );

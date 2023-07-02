@@ -21,6 +21,9 @@
 .questionText {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
 }
 
 .answersCount {

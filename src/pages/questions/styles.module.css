@@ -18,3 +18,35 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.filterButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+  
+.filterButtons button {
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+
+}
+
+.filterButtons button:hover {
+    background-color: rgb(222, 216, 216);
+  }
+
+  
+@media only screen and (max-width: 768px) {
+    .filterButtons {
+        flex-direction: column;
+        gap: 3px;
+        align-items: flex-end;
+    }
+    .filterButtons button {
+    max-width: fit-content;
+    
+    }
+
+  }
